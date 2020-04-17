@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+        <div class="card-body">
+          <!-- <textarea -->
+           <!-- readonly -->
+            <!-- id="password" -->
+            <!-- placeholder="Your Secure Password" -->
+            <!-- aria-label="Generated Password">
+            </textarea> -->
+        
+        
+        
+
+
+
+          
+        <script>
+            var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+            var allNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+            var specialArr = [" ", "!", "#", "$", "%", "&", ",", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
+            
+            // User prompted questions
+            var lower = confirm("Would you like your password to contain Lower Case letters?");
+            var upper = confirm("Would you like your password to contain Upper Case letters?");
+            var number = confirm("Would you like your password to contain Numbers?");
+            var special = confirm("Would you like your password to contain Special Charaters?");
+
+            // Generated variables
+            var passArray = []
+
+
+            // Combine the Arrays of the chosen cryteria
+            // https://dzone.com/articles/ways-to-combine-arrays-in-javascript
+            if (lower == true) {
+              passArray.push(...lowerCase);
+            }
+            if (upper == true) {
+              passArray.push(...upperCase);
+            }
+            if (number == true) {
+              passArray.push(...allNumbers);
+            }
+            if (special == true) {
+              passArray.push(...specialArr);
+            }
+            // console.log (passArray);
+
+            // validate user is entering a whole number between 8 & 128 and save to len variable
+            // https://stackoverflow.com/questions/59340866/random-password-generator-javascript-not-working
+              var len = Number(prompt("How many characters would you like your password to be?"));
+              while (isNaN(len) || len < 8 || len > 128) len = Number(prompt("Password lenght must be in whole numbers, more than 8 and less than 128 characters. How many characters would you like your password to be?"));
+              // console.log(len);
+
+
+            // function to generate a random number then pull the corresponding item out of passArray
+              function generate () {
+                var newPass="";
+                for (i = 0; i < len; i++) {
+                  newPass += passArray[Math.floor(passArray.length * Math.random())];
+                }
+                console.log(newPass);
+              }
+              
+              // call function generate()
+              generate()
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+        </div>
+        <div class="card-footer">
+          <button id="generate" class="btn">Generate Password</button>
+        </div>
+      </div>
+    </div>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>
