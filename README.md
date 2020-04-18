@@ -14,6 +14,5 @@ This site randomly generates a password.  It allows the user to choose any numbe
 ===================
 
 Repository URL:  https://github.com/jonkesler/Password-Generator.git
-Repository SSH:  git@github.com:jonkesler/Password-Generator.git
 
 Web URL:  https://jonkesler.github.io/Password-Generator/
